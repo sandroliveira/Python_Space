@@ -1,39 +1,14 @@
-## Welcome to GitHub Pages
+## Bem vindos ao meu GitHub
 
-[teste](https://github.com/sandroliveira/Public-Projects-Python/blob/master/BifidCipher.txt)
+Eu desejo inicialmente postar projetos na linguagem python, mas estou estudando javascript e desejo melhorar os meus conhecimentos em HTML e C++.
+Sou novo no Github e pretendo melhorar o meu conhecimento do mesmo, então peço perdão pela simplicidade, aos poucos vou personalizando melhor o meu espaço.
 
-You can use the [editor on GitHub](https://github.com/sandroliveira/Public-Projects-Python/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Projetos Python
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# [Bifid Cipher](https://github.com/sandroliveira/Public-Projects-Python/blob/master/BifidCipher.txt)
+**Prefácio:** Desenvolvi este projeto faz 3 meses atrás, utilizei recursos básicos aprendidos no curso de **Introdução à Ciência da Computação com Python - Cursera**, por fora tive que entender o conceito da criptografia **Bifid**.
 
-### Markdown
+**Explicação:** No início do arquivo deixo detalhes sobre correções e melhorias, saliento que entendam primeiramente como funciona a criptografia para depois rodar o código. Desenvolvi de forma que fosse possível visualizar todas as etapas da criptografia, sendo assim fácil de alterar e adaptar ao seu entendimento, eu vou atualzando conforme o possível e caso alguém queria me dar uma sugestão seja do programa ou da plataforma github deixe uma mensagem no meu email [aggalessandro@gmail.com](aggalessandro@gmail.com)  
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**Para ver o arquivo [clique aqui](https://github.com/sandroliveira/Public-Projects-Python/blob/master/BifidCipher.txt) ou vá direto no arquivo BifidCipher.txt**
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sandroliveira/Public-Projects-Python/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
