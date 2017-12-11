@@ -1,7 +1,7 @@
 ## Bem vindos ao meu GitHub (;
 
 Inicialmente vou postar projetos na linguagem python, mas estou estudando javascript e desejo melhorar os meus conhecimentos em HTML e C++.
-Sou novo no Github e também desejo melhorar o meu conhecimento do mesmo, então peço perdão pela simplicidade, aos poucos vou personalizando melhor o meu espaço.
+Sou novo no Github e também desejo melhorar o meu conhecimento do mesmo, então peço perdão pela simplicidade, aos poucos vou personalizando e organizando melhor o meu espaço.
 
 ## Projetos Python
 
