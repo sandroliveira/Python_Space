@@ -1,0 +1,288 @@
+[In Portuguese]
+Olá pessoal,
+Trago para vocês um Gerador de criptografia Bifid em python. Para entenderem melhor como 
+
+funciona essa cifra acessem esses 2 links abaixo:
+Bifid Cypher: http://practicalcryptography.com/ciphers/bifid-cipher/
+Criptografia - Cifra de Bifid: https://www.youtube.com/watch?v=VLAu85T8Ihs
+
+Abaixo, estão sugestões de correções, implementações e atualizações no código. Vou 
+
+Atualizando o código assim que possível e eliminando as questões corrigidas.
+Abs...
+
+#CORRIGIR
+-Erro de "period" maior que a "frase" (Detalhe: o erro está na segunda etapa de  
+
+descodificação).
+-Polir o código da função "descodificar".
+-Erro de Caracteres maiúsculos.
+
+#IMPLEMENTAR
+- Gerador aleatório de Keysquare/Chave.
+- Criar um menu de navegação em linha de comando.
+
+#FUTURAS ATUALIZAÇÕES
+- Transformar em linguagem objeto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+def primeira():
+    global letra
+    global numeros
+    global period
+    frase = str(input("Digite uma frase para ser codificada: "))
+    #Posição dentro do array/lista/vetor
+    posicao = 0
+    pegarrayrray = 0
+    
+    #Separando os números e distibuindo em 2 listas
+    retira = str(0)
+    quebra = str(0)
+
+    #Armazenando os numeros e atribuindo na lista apartir da quantidade do period
+    arm_a = ''
+    arm_b = ''
+
+    #Primeiro step
+    step1a = []
+    step1b = []
+
+    for x in frase:
+        if x in letra:
+            posicao = letra.index(x)
+            pegarray = numeros[posicao]
+            retira = pegarray % 10
+            quebra = pegarray // 10
+            pegarray = quebra
+            retira2 = pegarray % 10
+            arm_a = str(arm_a) + str(retira2)
+            arm_b = str(arm_b) + str(retira)
+            if len(arm_a) == period:
+                step1a.append(arm_a)
+                arm_a = ''
+            if len(arm_b) == period:
+                step1b.append(arm_b)
+                arm_b = ''
+    if arm_a and arm_b != '':
+        step1a.append(arm_a)
+        step1b.append(arm_b)
+
+    print()
+    print (step1a)
+    print (step1b)
+    print()
+    fileira_step1(step1a,step1b)
+
+def fileira_step1(step1a,step1b):
+    
+    #posição do step1a
+    posicao = 0
+    
+    #listas em fileiras (conversão)
+    fil_step1 = ''
+    
+    for z in step1a:
+        fil_step1 = str(fil_step1) + str(z)
+        fil_step1 = str(fil_step1) + str(step1b[posicao])
+        posicao += 1
+        
+    print(fil_step1)
+    print()
+    segunda(fil_step1)
+    
+    
+def segunda(fil_step1):
+    global period
+
+    #Calculo para atribuir valores impares na lista A e pares na lista B
+    count = 0
+    impar = 0
+
+    #Armazenando os numeros e atribuindo na lista apartir da quantidade do period
+    arm_a = ''
+    arm_b = ''
+
+    #Segundo step
+    step2a = []
+    step2b = []
+
+
+    for x in fil_step1:
+        count += 1
+        impar = float(count%2)
+        if impar == 1:
+            arm_a = str(arm_a) + str(x)
+            if len(arm_a) == period:
+                step2a.append(arm_a)
+                arm_a = ''
+        else:
+            arm_b = str(arm_b) + str(x)
+            if len(arm_b) == period:
+                step2b.append(arm_b)
+                arm_b = ''
+        if fil_step1 == count:
+            break
+    if arm_a and arm_b != '':
+        step2a.append(arm_a)
+        step2b.append(arm_b)
+        
+    print (step2a)
+    print (step2b)
+    print()
+    encript(fil_step1)
+
+
+def encript(fil_step1):
+    global letra
+    global numeros
+
+    #Armazenando até no máximo 2 números para depois encontra a posição deles dentro da 
+
+lista "numeros"
+    arm = ''
+    
+    #Posição do número dentro da lista "numeros"
+    posicao = 0
+
+    #Frase codificada
+    enc = ''
+    
+
+    for x in fil_step1:
+        arm = str(arm) + str(x)
+        if len(arm) == 2:
+            arm = int(arm)
+            if arm in numeros:
+                posicao =  numeros.index(arm)
+                enc = str(enc) + str(letra[posicao])
+            arm = ''
+        
+    
+    
+    print(enc)
+    print()
+    descodificar(enc)
+    
+
+def descodificar(enc):
+    print("Descodificando")
+    global letra
+    global numeros
+    global period
+
+    print("fileira")
+    fileira = ''
+    arm = ''
+    fileira = ''
+
+    armbool = True
+    arma = ''
+    armb = ''
+
+    contador = ''
+
+    calculo = 0
+
+    step1a = []
+    step1b = []
+
+
+    for x in enc:
+        arm = letra.index(x)
+        fileira = str(fileira) + str(numeros[arm])
+
+    print(fileira)
+
+    # Segunda etapa
+    for y in fileira:
+        contador = str(contador) + str(y)
+        
+        if calculo == 0:
+            calculo = len(fileira) % (period + period)
+
+
+        if armbool == True:
+            arma = str(arma) + str(y)
+            
+        if armbool == False:
+            armb = str(armb) + str(y)
+
+        if len(arma) == period:
+            step1a.append(arma)
+            armbool = False
+            arma = ''
+        if len(armb) == period:
+            step1b.append(armb)
+            armbool = True
+            armb = ''
+
+        if len(fileira) == len(contador) + calculo:
+            period = calculo / 2
+    print()
+    print(step1a)
+    print(step1b)
+    print()
+    
+
+    #última etapa
+
+    a = ''
+    b = ''
+
+    retira = 0
+    retira2 = 0
+    quebra = 0
+    quebra2 = 0
+
+    posicao = 0
+
+
+    desc = ''
+
+    for t in step1a:
+        a = str(a) + str(t)
+    for k in step1b:
+        b = str(b) + str(k)
+
+    
+
+
+    while a and b != '':
+        retira = int(a) % 10
+        retira2 = int(b) % 10
+        posicao = int(str(retira) + str(retira2))
+        desc = letra[numeros.index(posicao)] + str(desc)
+        a = quebra = int(a) // 10
+        b = quebra2 = int(b) // 10
+        
+        
+        
+    print(desc)
+
+    input()
+    
+
+    
+#periodo/period de intervalo do código
+period = int(input("Qual o período de codificação? "))
+
+#Lista/Array/Vetor
+letra = 
+
+["d","b","e","w","k","c","z","i","a","h","p","y","m","g","f","x","v","o","u","s","t","n"
+
+,"r","l","q"]
+numeros = [11,12,13,14,15,21,22,23,24,25,31,32,33,34,35,41,42,43,44,45,51,52,53,54,55]
+        
+primeira()
